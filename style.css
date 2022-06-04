@@ -1,0 +1,79 @@
+*{
+    background: rgb(163, 191, 255);
+    overflow-x: hidden;
+}
+
+.navbar{
+    height: 40px;
+    
+}
+.btn{
+    position: fixed;
+    top: 8px;
+    right: 10px;
+    background:rgb(86, 185, 86);
+    color:white;
+    border-color: rgb(86, 185, 86);
+    padding: 10px;
+    cursor: pointer;
+    height: 30px;
+    line-height: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0px;
+    margin: 0 auto;
+    width: 1900px;
+    height: 900px;
+    
+}
+
+.nota{
+    margin: 30px;
+    box-shadow: 1px 1px 9px 1px black;
+    height: 350px;
+    width: 350px;
+    overflow-y: hidden;
+}
+
+.tools{
+    background: rgb(86, 185, 86);
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+}
+.btn-delete{
+    background:grey;
+    color: white;
+    margin-right: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-edit{
+    background:grey;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+textarea{
+    outline: none;
+    background: white;
+    height:350px;
+    width:100%;
+    border: none;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.hidden{
+    display: none;
+}
+
