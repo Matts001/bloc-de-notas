@@ -1,5 +1,5 @@
 *{
-    background: rgb(163, 191, 255);
+    background: rgb(36, 109, 168);
     overflow-x: hidden;
 }
 
@@ -7,6 +7,7 @@
     height: 40px;
     
 }
+
 .btn{
     position: fixed;
     top: 8px;
@@ -27,14 +28,15 @@
     flex-wrap: wrap;
     margin-top: 0px;
     margin: 0 auto;
-    width: 1900px;
-    height: 900px;
-    
+    width: cover;
+    height: cover;
 }
 
 .nota{
-    margin: 30px;
-    box-shadow: 1px 1px 9px 1px black;
+    
+    margin-left: 65px;
+    margin-bottom: 20px;
+    padding: 20px;
     height: 350px;
     width: 350px;
     overflow-y: hidden;
@@ -48,8 +50,23 @@
     justify-content: flex-end;
     
 }
+
+.titulo{
+    margin-right: 10px;
+    outline: none;
+    background: transparent;
+    height:30px;
+    width: 900px;
+    border: none;
+    padding: 2px;
+    font-size: 25px;
+    overflow: hidden;
+}
+
 .btn-delete{
-    background:grey;
+    text-align: center;
+    width: 130px;
+    background: transparent;
     color: white;
     margin-right: 4px;
     border: none;
@@ -57,10 +74,22 @@
 }
 
 .btn-edit{
-    background:grey;
+    text-align: center;
+    width: 100px;
+    background: transparent;
     color: white;
     border: none;
     cursor: pointer;
+}
+.tools{
+    box-shadow: 0px 0px 6px 0px black;
+    border: 1px solid black;
+    
+}
+.note-body{
+    box-shadow: 0px 0px 6px 0px black;
+    border: 1px solid black;
+    
 }
 
 textarea{
@@ -77,3 +106,50 @@ textarea{
     display: none;
 }
 
+
+
+@media screen and (min-width:360px) {
+ 
+    .nota{
+        
+        margin-left: 10px;
+        width: 350px;
+    }
+    .titulo{
+        margin-right: 3px;
+        height:30px;
+        width: 900px;
+        border: none;
+        padding: 2px;
+        font-size: 25px;
+        
+    }
+}
+
+@media screen and (min-width:768px) {
+    .nota{
+        margin-left: 2px;
+        margin-right: 2px;
+        width: 350px;
+        padding: 10px;
+    }
+   
+}
+
+@media screen and (min-width:1200px) {
+    .nota{
+        margin-left: 40px;
+        margin-right: 10px;
+        padding: 5px;
+        width: 350px;
+    }
+}
+
+@media screen and (min-width:1400px) {
+    .nota{
+        margin-left: 75px;
+        margin-right: 10px;
+        padding: 10px;
+        width: 350px;
+    }
+}

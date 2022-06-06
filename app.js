@@ -30,11 +30,12 @@ function crearHtml(){
             note.dataset.notaId = nota.id;
             note.innerHTML = `
             <div class="tools">
-                <button class="btn-delete">delete</button>
-                <button class="btn-edit">edit</button>
+                <textarea class="titulo" style="resize:none" maxlength="14">titulo nota</textarea>
+                <button class="material-symbols-outlined btn-delete">delete</button>
+                <button class="material-symbols-outlined btn-edit">edit</button>
             </div>
             <div class="note-body">
-               <textarea></textarea>
+               <textarea class="tuNota"></textarea>
             </div>
             `;
             const btnDelete = note.querySelector('.btn-delete')
@@ -46,7 +47,7 @@ function crearHtml(){
                 
                 console.log(listaNotas);
             })
-            const text = note.querySelector('textarea');
+            const text = note.querySelector('.tuNota');
             const btnEdit = note.querySelector('.btn-edit');
             btnEdit.addEventListener('click', () => {
                 text.classList.toggle('hidden')
@@ -63,8 +64,3 @@ function borrarLista(){
     }
     console.log(listaNotas);
 }
-
-    
-
-
-
