@@ -1,21 +1,22 @@
 *{
-    background: rgb(36, 109, 168);
     overflow-x: hidden;
+}
+body{
+    background: Linear-gradient(to left,#538aff,#121a44);
+    background-repeat: none;
+    background-size: cover cover;
 }
 
 .navbar{
     height: 40px;
-    
 }
 
 .btn{
     position: fixed;
     top: 8px;
-    right: 10px;
-    background:rgb(86, 185, 86);
+    right: 20px;
+    background: #202e74;
     color:white;
-    border-color: rgb(86, 185, 86);
-    padding: 10px;
     cursor: pointer;
     height: 30px;
     line-height: 8px;
@@ -33,7 +34,6 @@
 }
 
 .nota{
-    
     margin-left: 65px;
     margin-bottom: 20px;
     padding: 20px;
@@ -41,9 +41,26 @@
     width: 350px;
     overflow-y: hidden;
 }
+/*aplicar a los ultimos hijos por medio de pseudo-clase */
+.container div:last-child{
+    animation: mueve 1s normal;
+}
+.container div div:last-child{
+    animation: none;
+}
+/*                                         */
+@keyframes mueve {
+    0%,100%{    
+        transform: translateY(0px);
+        
+    }
+    50%{
+        transform: translateY(20px);
+    }
+}
 
 .tools{
-    background: rgb(86, 185, 86);
+    background: Linear-gradient(to bottom,#538aff,#121a44);
     padding: 5px;
     display: flex;
     flex-direction: row;
@@ -52,6 +69,7 @@
 }
 
 .titulo{
+    background: Linear-gradient(to bottom,#538aff,#121a44);
     margin-right: 10px;
     outline: none;
     background: transparent;
@@ -61,6 +79,8 @@
     padding: 2px;
     font-size: 25px;
     overflow: hidden;
+    font-style: oblique;
+    color: white;
 }
 
 .btn-delete{
@@ -94,12 +114,17 @@
 
 textarea{
     outline: none;
-    background: white;
-    height:350px;
-    width:100%;
+    background: rgb(216, 205, 205);
+    height:300px;
+    width:340px;
     border: none;
-    padding: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
     font-size: 20px;
+
 }
 
 .hidden{
@@ -152,4 +177,12 @@ textarea{
         padding: 10px;
         width: 350px;
     }
+}
+
+body::-webkit-scrollbar{
+    width: 15px;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: Linear-gradient(to bottom,#538aff,#121a44);
 }

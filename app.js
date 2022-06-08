@@ -1,20 +1,25 @@
 const btnNewNota = document.querySelector('.btn');
 const container = document.querySelector('.container');
-const nota = document.querySelector('.nota');
+
 const btnDelete = document.querySelector('.btn-delete');
 let listaNotas = [];
 
 btnNewNota.addEventListener('click', () => newNota());
 
+document.addEventListener('DOMContentLoaded', () => {
+    listaNotas = JSON.parse( localStorage.getItem('listaNotas') ) || []  ;
+    
+    crearHtml();
+});
+
 function newNota(){
     const note = document.createElement('div');
-
     const nota = {
         id : Date.now(),
-        texto :note,
+        texto :note, 
     }
     listaNotas = [...listaNotas, nota];
-
+    
     crearHtml();
 }
 
@@ -25,37 +30,53 @@ function crearHtml(){
             container.removeChild(container.firstChild);
         }
         listaNotas.forEach(nota => {
+            
             const note = document.createElement('div'); 
             note.classList.add('nota');
-            note.dataset.notaId = nota.id;
+            note.dataset.notaId = nota.id;    
             note.innerHTML = `
             <div class="tools">
-                <textarea class="titulo" style="resize:none" maxlength="14">titulo nota</textarea>
+                <textarea class="titulo" style="resize:none" maxlength="14">Titulo...</textarea>
                 <button class="material-symbols-outlined btn-delete">delete</button>
                 <button class="material-symbols-outlined btn-edit">edit</button>
             </div>
-            <div class="note-body">
-               <textarea class="tuNota"></textarea>
-            </div>
+            <div class="note-body"></div>
             `;
+            const noteBody = note.querySelector('.note-body');
+            let text = noteBody.querySelector('.tuNota');
+            noteBody.innerHTML = `<textarea class="tuNota" id="contenido" style="resize:none" maxlength="600" spellcheck="false"></textarea>`;
+            noteBody.addEventListener('input', (e) =>{
+                e.preventDefault;
+                let text = noteBody.querySelector('.tuNota');
+                nota['text'] = text.value;   
+            })
+            
             const btnDelete = note.querySelector('.btn-delete')
             btnDelete.addEventListener('click', (e) => {
                 note.remove();
                 id = e.target.parentElement.parentElement.dataset.notaId;
-                //filter trae todo los elementos execpto el filtrado creando una nueva array sin el elemento seleccionado
-                listaNotas = listaNotas.filter(nota => nota.id != id);
-                
+                //filter trae todo los elementos excepto el filtrado creando una nueva array sin el elemento seleccionado
+                listaNotas = listaNotas.filter(nota => nota.id != id)
+                eliminar();
+    
                 console.log(listaNotas);
+                
             })
-            const text = note.querySelector('.tuNota');
+
             const btnEdit = note.querySelector('.btn-edit');
             btnEdit.addEventListener('click', () => {
                 text.classList.toggle('hidden')
             })
-
+            
+            localStorage.setItem('listaNotas', JSON.stringify(listaNotas));
+            
             container.appendChild(note);
         })
     }
+}
+
+function eliminar(){
+    localStorage.setItem('listaNotas', JSON.stringify(listaNotas));
 }
 
 function borrarLista(){
@@ -64,3 +85,6 @@ function borrarLista(){
     }
     console.log(listaNotas);
 }
+
+
+
