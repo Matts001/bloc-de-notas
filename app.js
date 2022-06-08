@@ -1,6 +1,5 @@
 const btnNewNota = document.querySelector('.btn');
 const container = document.querySelector('.container');
-
 const btnDelete = document.querySelector('.btn-delete');
 let listaNotas = [];
 
@@ -16,10 +15,10 @@ function newNota(){
     const note = document.createElement('div');
     const nota = {
         id : Date.now(),
-        texto :note, 
+        newNote :note, 
     }
-    listaNotas = [...listaNotas, nota];
-    
+    listaNotas = [...listaNotas, nota]; 
+
     crearHtml();
 }
 
@@ -40,15 +39,17 @@ function crearHtml(){
                 <button class="material-symbols-outlined btn-delete">delete</button>
                 <button class="material-symbols-outlined btn-edit">edit</button>
             </div>
-            <div class="note-body"></div>
+            <div class="note-body">
+            <textarea class="tuNota" id="contenido" style="resize:none" maxlength="600" spellcheck="false"></textarea>
+            </div>
             `;
+
             const noteBody = note.querySelector('.note-body');
             let text = noteBody.querySelector('.tuNota');
-            noteBody.innerHTML = `<textarea class="tuNota" id="contenido" style="resize:none" maxlength="600" spellcheck="false"></textarea>`;
             noteBody.addEventListener('input', (e) =>{
                 e.preventDefault;
                 let text = noteBody.querySelector('.tuNota');
-                nota['text'] = text.value;   
+                nota['text'] = text.value;
             })
             
             const btnDelete = note.querySelector('.btn-delete')
@@ -68,8 +69,9 @@ function crearHtml(){
                 text.classList.toggle('hidden')
             })
             
-            localStorage.setItem('listaNotas', JSON.stringify(listaNotas));
-            
+            localStorage.setItem('listaNotas', JSON.stringify(listaNotas));    
+        
+            text.value = nota['text'] || '';
             container.appendChild(note);
         })
     }
@@ -85,6 +87,4 @@ function borrarLista(){
     }
     console.log(listaNotas);
 }
-
-
 
