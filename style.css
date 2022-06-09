@@ -2,7 +2,7 @@
     overflow-x: hidden;
 }
 body{
-    background: Linear-gradient(to left,#538aff,#121a44);
+    background: Linear-gradient(to left,#0b1029,#121a44);
     background-repeat: none;
     background-size: cover cover;
 }
@@ -11,17 +11,31 @@ body{
     height: 40px;
 }
 
+h1{
+    display:block;
+    position:absolute;
+    line-height: 60px;
+    font-size: 60px;
+    color: #0099ff;
+    margin-top: 10px;
+    margin-left: 70px;
+    overflow-y: hidden;
+    width: 900px;
+    height: 100px;
+    font-family: 'Orbitron', sans-serif;
+}
+
 .btn{
     position: fixed;
-    top: 8px;
-    right: 20px;
-    background: #202e74;
-    color:white;
+    top: 40px;
+    right: 100px;
+    background: #0099ff;;
+    color:black;
     cursor: pointer;
-    height: 30px;
+    height: 40px;
     line-height: 8px;
     border-radius: 5px;
-    border: none;
+    border: 2px solid  black;
 }
 
 .container{
@@ -29,16 +43,19 @@ body{
     flex-wrap: wrap;
     margin-top: 0px;
     margin: 0 auto;
+    margin-top: 20px;
     width: cover;
     height: cover;
 }
 
 .nota{
+    background: #0099ff;
     margin-left: 65px;
     margin-bottom: 20px;
     padding: 20px;
     height: 350px;
     width: 350px;
+    border-radius: 20px;
     overflow-y: hidden;
 }
 /*aplicar a los ultimos hijos por medio de pseudo-clase */
@@ -60,7 +77,8 @@ body{
 }
 
 .tools{
-    background: Linear-gradient(to bottom,#538aff,#121a44);
+    border-radius: 20px;
+    background: #0099ff;
     padding: 5px;
     display: flex;
     flex-direction: row;
@@ -69,7 +87,7 @@ body{
 }
 
 .titulo{
-    background: Linear-gradient(to bottom,#538aff,#121a44);
+    background: #0099ff;
     margin-right: 10px;
     outline: none;
     background: transparent;
@@ -80,64 +98,43 @@ body{
     font-size: 25px;
     overflow: hidden;
     font-style: oblique;
-    color: white;
+    color: black;
 }
 
 .btn-delete{
     text-align: center;
     width: 130px;
+    height: cover;
     background: transparent;
-    color: white;
-    margin-right: 4px;
+    color: #121a44;
+    margin-right: -14px;
     border: none;
     cursor: pointer;
+    font-weight: bold;
 }
-
-.btn-edit{
-    text-align: center;
-    width: 100px;
-    background: transparent;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-.tools{
-    box-shadow: 0px 0px 6px 0px black;
-    border: 1px solid black;
     
-}
-.note-body{
-    box-shadow: 0px 0px 6px 0px black;
-    border: 1px solid black;
-    
-}
 
 textarea{
     outline: none;
-    background: rgb(216, 205, 205);
+    background: #0099ff;
     height:300px;
     width:340px;
     border: none;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    
+    padding: 4%;
     font-size: 20px;
-
+    border-top: 1px solid black;
 }
+
 
 .hidden{
     display: none;
 }
 
-
-
 @media screen and (min-width:360px) {
  
     .nota{
         
-        margin-left: 10px;
+        margin: 5%;
         width: 350px;
     }
     .titulo{
@@ -153,10 +150,9 @@ textarea{
 
 @media screen and (min-width:768px) {
     .nota{
-        margin-left: 2px;
-        margin-right: 2px;
-        width: 350px;
-        padding: 10px;
+        margin: 2%;
+        width: 300px;
+        
     }
    
 }
@@ -181,8 +177,9 @@ textarea{
 
 body::-webkit-scrollbar{
     width: 15px;
+    background: black;
 }
 
 body::-webkit-scrollbar-thumb{
-    background: Linear-gradient(to bottom,#538aff,#121a44);
+    background: #0099ff;
 }

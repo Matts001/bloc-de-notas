@@ -35,9 +35,8 @@ function crearHtml(){
             note.dataset.notaId = nota.id;    
             note.innerHTML = `
             <div class="tools">
-                <textarea class="titulo" style="resize:none" maxlength="14"></textarea>
-                <button class="material-symbols-outlined btn-delete">delete</button>
-                <button class="material-symbols-outlined btn-edit">edit</button>
+                <textarea class="titulo" style="resize:none" maxlength="14"></textarea>   
+                <button class="material-symbols-outlined btn-delete">close</button>
             </div>
             <div class="note-body">
             <textarea class="tuNota" id="contenido" style="resize:none" maxlength="600" spellcheck="false"></textarea>
@@ -47,7 +46,6 @@ function crearHtml(){
             const tools = note.querySelector('.tools');
             let titulo = tools.querySelector('.titulo');
             titulo.addEventListener('input', () =>{
-                let titulo = tools.querySelector('.titulo');
                 nota['titulo'] = titulo.value;
                 localStorage.setItem('listaNotas', JSON.stringify(listaNotas));
             })
@@ -55,7 +53,6 @@ function crearHtml(){
             const noteBody = note.querySelector('.note-body');
             let text = noteBody.querySelector('.tuNota');
             noteBody.addEventListener('input', () =>{
-                let text = noteBody.querySelector('.tuNota');
                 nota['text'] = text.value;
                 localStorage.setItem('listaNotas', JSON.stringify(listaNotas));
             })
@@ -72,13 +69,8 @@ function crearHtml(){
                 
             })
 
-            const btnEdit = note.querySelector('.btn-edit');
-            btnEdit.addEventListener('click', () => {
-                text.classList.toggle('hidden')
-            })
-
             titulo.value = nota['titulo'] || 'titulo...';
-            text.value = nota['text'] || '-';
+            text.value = nota['text'] || '';
             container.appendChild(note);
         })
     }
