@@ -137,18 +137,24 @@ textarea{
         margin: 5%;
         width: 350px;
     }
-    .titulo{
-        margin-right: 3px;
-        height:30px;
-        width: 900px;
-        border: none;
-        padding: 2px;
-        font-size: 25px;
-        
+    h1{
+        margin-left:3%;
+        font-size:31px;
+    }
+    .btn{
+        right:30px;
+        margin-top: -10px;
     }
 }
 
 @media screen and (min-width:768px) {
+
+    h1{
+        margin-left: 3%;
+    }
+    .container{
+        margin-top: 40px;
+    }
     .nota{
         margin: 2%;
         width: 300px;
