@@ -6,8 +6,8 @@ let listaNotas = [];
 btnNewNota.addEventListener('click', () => newNota());
 
 document.addEventListener('DOMContentLoaded', () => {
-    listaNotas = JSON.parse( localStorage.getItem('listaNotas') ) || []  ;
-    
+
+    listaNotas = JSON.parse( localStorage.getItem('listaNotas') ) || []     
     crearHtml();
 });
 
@@ -35,7 +35,7 @@ function crearHtml(){
             note.dataset.notaId = nota.id;    
             note.innerHTML = `
             <div class="tools">
-                <textarea class="titulo" style="resize:none" maxlength="14">Titulo...</textarea>
+                <textarea class="titulo" style="resize:none" maxlength="14"></textarea>
                 <button class="material-symbols-outlined btn-delete">delete</button>
                 <button class="material-symbols-outlined btn-edit">edit</button>
             </div>
@@ -44,12 +44,20 @@ function crearHtml(){
             </div>
             `;
 
+            const tools = note.querySelector('.tools');
+            let titulo = tools.querySelector('.titulo');
+            titulo.addEventListener('input', () =>{
+                let titulo = tools.querySelector('.titulo');
+                nota['titulo'] = titulo.value;
+                localStorage.setItem('listaNotas', JSON.stringify(listaNotas));
+            })
+
             const noteBody = note.querySelector('.note-body');
             let text = noteBody.querySelector('.tuNota');
-            noteBody.addEventListener('input', (e) =>{
-                e.preventDefault;
+            noteBody.addEventListener('input', () =>{
                 let text = noteBody.querySelector('.tuNota');
                 nota['text'] = text.value;
+                localStorage.setItem('listaNotas', JSON.stringify(listaNotas));
             })
             
             const btnDelete = note.querySelector('.btn-delete')
@@ -68,13 +76,17 @@ function crearHtml(){
             btnEdit.addEventListener('click', () => {
                 text.classList.toggle('hidden')
             })
-            
-            localStorage.setItem('listaNotas', JSON.stringify(listaNotas));    
-        
-            text.value = nota['text'] || '';
+
+            titulo.value = nota['titulo'] || 'titulo...';
+            text.value = nota['text'] || '-';
             container.appendChild(note);
         })
     }
+    sincronizarStorage();
+}
+
+function sincronizarStorage() {
+    localStorage.setItem('listaNotas', JSON.stringify(listaNotas));
 }
 
 function eliminar(){
