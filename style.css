@@ -89,7 +89,8 @@ h1{
 }
 
 .titulo{
-    font-family: 'Orbitron', sans-serif;
+    font-style: oblique;
+    
     background: #0099ff;
     margin-right: 10px;
     outline: none;
@@ -135,13 +136,12 @@ textarea{
 @media screen and (min-width:360px) {
  
     .nota{
-        
         margin: 5%;
         width: 350px;
     }
     h1{
         margin-left:3%;
-        font-size:31px;
+        font-size:28px;
     }
     .btn{
         right:30px;
@@ -151,8 +151,12 @@ textarea{
 
 @media screen and (min-width:768px) {
 
+    .btn{
+        right:40px;
+    }
     h1{
-        margin-left: 3%;
+        margin-left: 3%;     
+        font-size:50px;  
     }
     .container{
         margin-top: 40px;
@@ -166,6 +170,15 @@ textarea{
 }
 
 @media screen and (min-width:1200px) {
+
+    h1{
+        font-size:50px;
+    }
+
+    .btn{
+        right:60px;
+        margin-top: -10px;
+    }
     .nota{
         margin-left: 40px;
         margin-right: 10px;
@@ -175,6 +188,10 @@ textarea{
 }
 
 @media screen and (min-width:1400px) {
+    h1{
+        font-size: 50px;
+        margin-left: 4%;
+    }
     .nota{
         margin-left: 75px;
         margin-right: 10px;

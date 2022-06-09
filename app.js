@@ -35,7 +35,7 @@ function crearHtml(){
             note.dataset.notaId = nota.id;    
             note.innerHTML = `
             <div class="tools">
-                <textarea class="titulo" style="resize:none" maxlength="14"></textarea>   
+                <textarea class="titulo" style="resize:none" maxlength="20" spellcheck="false"></textarea>   
                 <button class="material-symbols-outlined btn-delete">close</button>
             </div>
             <div class="note-body">
