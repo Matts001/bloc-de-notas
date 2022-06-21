@@ -144,6 +144,9 @@ textarea{
 }
 
 @media screen and (min-width:360px) {
+    *{
+        overflow-x: hidden;
+    }
     .nota{
         margin: 10%;
         margin-right: 15%;
@@ -159,7 +162,9 @@ textarea{
 }
 
 @media screen and (min-width:768px) {
-
+    *{
+        overflow-x: hidden;
+    }
     .btn{
         right:40px;
     }
