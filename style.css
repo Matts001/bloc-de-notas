@@ -1,14 +1,14 @@
 *{
-    overflow-x: hidden !important;
+    overflow-x: hidden;
     box-sizing: border-box;
     background: Linear-gradient(to left,#0b1029,#121a44);
     width: cover;
     height: cover;
+    background-repeat: none !important;
 }
 body{
    width: cover;
    height: cover;
-   overflow-x: hidden !important;
 }
 
 .navbar{
