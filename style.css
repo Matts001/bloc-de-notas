@@ -1,7 +1,6 @@
 *{
     overflow-x: hidden !important;
     box-sizing: border-box;
-    background-repeat: none;
     background: Linear-gradient(to left,#0b1029,#121a44);
     width: cover;
     height: cover;
@@ -10,7 +9,6 @@
 body{
    width: cover;
    height: cover;
-   
 }
 
 .navbar{
