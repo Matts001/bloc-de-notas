@@ -4,11 +4,11 @@
     background: Linear-gradient(to left,#0b1029,#121a44);
     width: cover;
     height: cover;
-    
 }
 body{
    width: cover;
    height: cover;
+   overflow-x: hidden !important;
 }
 
 .navbar{
