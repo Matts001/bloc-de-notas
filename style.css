@@ -502,8 +502,8 @@ h1{
     margin-top: 0px;
     margin: 0 auto;
     margin-top: 20px;
-    width: cover;
-    height: cover;
+    width: 100%;
+    height: 100%;
 }
 
 .nota{
