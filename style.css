@@ -5,6 +5,7 @@
     width: cover;
     height: cover;
     background-repeat: none !important;
+    border: 1px solid yellow;
 }
 body{
    width: cover;
@@ -145,11 +146,6 @@ textarea{
     *{
         overflow-x: hidden;
     }
-    body{
-        width: cover;
-        height: cover;
-        border: 1px solid yellow;
-     }
     .nota{
         margin: 10%;
         margin-right: 15%;
