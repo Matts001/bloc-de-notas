@@ -1,6 +1,7 @@
 *{
     overflow-x: hidden;
     box-sizing: border-box;
+    
 }
 body{
     background: Linear-gradient(to left,#0b1029,#121a44);
@@ -9,7 +10,11 @@ body{
 }
 
 .navbar{
+    display: flex;
+    flex-direction: row;
     height: 40px;
+    width: 100%;
+    border: 1px solid yellow;
 }
 
 h1{
@@ -29,8 +34,7 @@ h1{
 
 .btn{
     position: fixed;
-    top: 40px;
-    right: 100px;
+    
     background: #0099ff;;
     color:black;
     cursor: pointer;
