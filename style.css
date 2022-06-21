@@ -2,10 +2,8 @@
     overflow-x: hidden;
     box-sizing: border-box;
     background: Linear-gradient(to left,#0b1029,#121a44);
-    width: cover;
-    height: cover;
     background-repeat: none !important;
-    border: 1px solid yellow;
+    
 }
 body{
    width: cover;
@@ -29,8 +27,8 @@ h1{
     margin-top: 10px;
     margin-left: 70px;
     overflow-y: hidden;
-    width: 900px;
-    height: 100px;
+    width: 20%;
+    height: 6%;
     font-family: 'Orbitron', sans-serif;
     font-style: oblique;
 }
